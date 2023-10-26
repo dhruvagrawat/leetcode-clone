@@ -3,33 +3,69 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const problems = [{
+    title: "201. Bitwise AND of Numbers Range",
+    difficulty: "Medium",
+    acceptance: "42%"
+},{
+    title: "201. Bitwise AND of Numbers Range",
+    difficulty: "Medium",
+    acceptance: "412%"
+},
+    {
+        title: "202. Happy Number",
+        difficulty: "Easy",
+        acceptance: "54.9%"
+    },
+    {
+        title: "203. Remove Linked List Elements",
+        difficulty: "Hard",
+        acceptance: "42%"
+    }];
 
-  return (
-    <>
+
+function App() {
+
+    /* Add routing here, routes look like -
+       /login - Login page
+       /signup - Signup page
+       /problemset/all/ - All problems (see problems array above)
+       /problems/:problem_slug - A single problem page
+     */
+
+    return (
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <input type="text" placeholder="email" />
+        <input type="text" placeholder="Password" />
+        <input type="text" placeholder="username" />
+        <button>sign in</button>
+        <div>
+          <button>1</button>
+          <button>2</button>
+        </div>
+        <div id="problem-statement">
+        </div> 
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    )
 }
 
+// A demo component
+function ProblemStatement(props) {
+    const title = props.title;
+    const acceptance = props.acceptance;
+    const difficulty = props.difficulty;
+
+    return <tr>
+        <td>
+            {title}
+        </td>
+        <td>
+            {acceptance}
+        </td>
+        <td>
+            {difficulty}
+        </td>
+    </tr>
+}
 export default App
+
